@@ -7,6 +7,7 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ADMIN
  */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "MainController", urlPatterns = {"/MainController"})
+public class MainController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,32 +30,41 @@ public class LoginServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    public boolean isValidLogin(String username, String password){
+        return username.equals("admin") && password.equals("12345678");
+    }
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-//            String username = request.getParameter("txtUsername");
-//            String password = request.getParameter("txtPassword");
-//            out.println("Username: " + username + "<br/>");
-//            out.println("Password: " + password);
-            String idStudent = request.getParameter("idStudent");
-            String fullName = request.getParameter("fullName");
-            String gender = request.getParameter("gender");
+        PrintWriter out = response.getWriter();
+            String name = request.getParameter("username");
+            String pw = request.getParameter("password");
             
-            out.println("<h1>Personal Information</h1>");
-            out.println("<p>ID Student: " + idStudent + "</p>");
-            out.println("<p>Full Name: " + fullName + "</p>");
-            out.println("<p>Gender: " + gender + "</p>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+            if(name.isEmpty() || name.trim().length() == 0){
+                out.print("Username is not null!");
+                return;
+            }
+            
+            if(pw.length() < 8) {
+                out.print("Password must be at least 8 character!<br/>");
+                return;
+            }
+            
+            if(isValidLogin(name, pw)) {
+                //forward, redirect
+                //forward   
+                RequestDispatcher rd = request.getRequestDispatcher("search.html");
+                rd.forward(request, response);
+            } else {
+                // forward , redirect
+                // forward
+                // RequestDispatcher rd = request.getRequestDispatcher("invalid.html");
+                // rd.forward(request, response);
+                response.sendRedirect("invalid.html");
+                
+                // compare rd.forward vs response.sendRedirect? case study?
+            }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

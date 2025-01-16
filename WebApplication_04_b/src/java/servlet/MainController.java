@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ADMIN
  */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "MainController", urlPatterns = {"/MainController"})
+public class MainController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,21 +37,25 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");
+            out.println("<title>Servlet LoginServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-//            String username = request.getParameter("txtUsername");
-//            String password = request.getParameter("txtPassword");
-//            out.println("Username: " + username + "<br/>");
-//            out.println("Password: " + password);
-            String idStudent = request.getParameter("idStudent");
-            String fullName = request.getParameter("fullName");
-            String gender = request.getParameter("gender");
+            String name = request.getParameter("username");
+            String pw = request.getParameter("password");
             
-            out.println("<h1>Personal Information</h1>");
-            out.println("<p>ID Student: " + idStudent + "</p>");
-            out.println("<p>Full Name: " + fullName + "</p>");
-            out.println("<p>Gender: " + gender + "</p>");
+            if(name.isEmpty() || name.trim().length() == 0){
+                out.print("Username is not null!");
+                return;
+            } else if(pw.length() < 8) {
+                out.print("Password must be at least 8 character!<br/>");
+                return;
+            } else if(name.equals("ADMIN") && pw.equals("12345678")){
+                out.print("Login successfull!");
+                return;
+            } else {
+                out.print("Login fail!");
+            }
+                
             out.println("</body>");
             out.println("</html>");
         }
