@@ -63,7 +63,7 @@ public class MainController extends HttpServlet {
                 // rd.forward(request, response);
                 response.sendRedirect("invalid.html");
                 
-                // compare rd.forward vs response.sendRedirect? case study?
+                    // compare rd.forward vs response.sendRedirect? case study?
             }
     }
 
