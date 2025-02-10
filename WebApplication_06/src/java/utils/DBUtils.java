@@ -7,7 +7,6 @@ package utils;
 
 import java.io.FileNotFoundException;
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,13 +15,14 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author ADMIN
+ * @author tungi
  */
 public class DBUtils {
-    private static final String DB_Name = "Web_05_a";
+
+    private static final String DB_Name = "prj301_1805_06";
     private static final String DB_Username = "sa";
     private static final String DB_Password = "12345";
-    
+
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Connection conn = null;
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -36,16 +36,10 @@ public class DBUtils {
             Connection c = getConnection();
             System.out.println(c);
             
-            String sql = "INSERT INTO products (product_id, product_name, price, category, stock_quantity) VALUES" +
-                            "(11, N'Điện thoại iPhone 16', 54990000, N'Điện thoại', 199)";
-            Statement st = c.createStatement();
-            int i = st.executeUpdate(sql);
-            System.out.println(i);
-            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(DBUtils.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(DBUtils.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-}   
+}
