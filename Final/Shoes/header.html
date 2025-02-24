@@ -14,6 +14,10 @@
             list-style-type: none;
         }
 
+        nav:hover {
+            cursor: default;
+        }
+
         .ticker-container {
             width: 100%;
             overflow: hidden;
@@ -416,61 +420,14 @@
             </div>
 
             <nav class="nav-cont">
-                <a href=""><i class="fa-solid fa-box"></i></a>
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
-                <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href="#"><i class="fa-regular fa-circle-user"></i></a>
+                <a href="" title="Tra cứu đơn hàng"><i class="fa-solid fa-box"></i></a>
+                <a href="#" title="Danh sách yêu thích"><i class="fa-solid fa-heart"></i></a>
+                <a href="#" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="#" title="Đăng nhập"><i class="fa-regular fa-circle-user"></i></a>
             </nav>
-        </div>
-        <div class="ticker-container">
-            <button class="ticker-button prev" id="prevNews">&#8249;</button>
-            <div class="ticker-wrapper">
-                <div class="ticker-content" id="tickerContent">
-                    <div class="ticker-item">FREE SHIPPING VỚI HÓA ĐƠN TỪ 900K!</div>
-                    <div class="ticker-item">HÀNG 2 TUẦN NHẬN ĐỔI - GIÀY NỬA BẢO HÀNH</div>
-                    <div class="ticker-item">BUY MORE PAY LESS - ÁP DỤNG KHI MUA PHỤ KIỆN</div>
-                    <div class="ticker-item">BUY 2 GET 10% OFF - ÁP DỤNG VỚI TẤT CẢ BASIC TEE</div>
-                </div>
-            </div>
-            <button class="ticker-button next" id="nextNews">&#8250;</button>
         </div>
     </header>
 
-    <script>
-        const tickerContent = document.getElementById('tickerContent');
-        const prevNewsButton = document.getElementById('prevNews');
-        const nextNewsButton = document.getElementById('nextNews');
-        const searchInput = document.querySelector('.search input');
-        let index = 0;
-        const totalItems = document.querySelectorAll('.ticker-item').length;
-        let interval;
-
-        function updateTicker() {
-            tickerContent.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        function resetInterval() {
-            clearInterval(interval);
-            interval = setInterval(nextNews, 3000);
-        }
-
-        function nextNews() {
-            index = (index + 1) % totalItems;
-            updateTicker();
-            resetInterval();
-        }
-
-        function prevNews() {
-            index = (index - 1 + totalItems) % totalItems;
-            updateTicker();
-            resetInterval();
-        }
-
-
-        interval = setInterval(nextNews, 3000);
-        nextNewsButton.addEventListener('click', nextNews);
-        prevNewsButton.addEventListener('click', prevNews);
-    </script>
 
     <script>
         const menu = document.querySelector(".menu");
