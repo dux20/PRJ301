@@ -19,14 +19,14 @@
             cursor: default;
         }
 
+        input:hover {
+            cursor:text;
+        }
+
         header {
             position: sticky;
             top: 0;
             backdrop-filter: blur(45px);
-        }
-
-        input:hover {
-            cursor:text;
         }
 
         .navbar {
@@ -115,9 +115,16 @@
             color: #fbe385;
         }
 
+        .nav-menu a {
+            transition: transform 0.3s;
+        }
+
         .nav-menu a:hover{
+            transform: scale(1.2);
             color: #fbe385;
         }
+
+
     </Style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -151,6 +158,7 @@
                     <a href=""><i class="fa-solid fa-heart"></i></a>
                     <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
                     <a href=""><i class="fa-solid fa-user"></i></a>
+                    
                 </div>
             </div>
         </div>
