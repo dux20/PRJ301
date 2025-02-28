@@ -14,283 +14,110 @@
             list-style-type: none;
         }
 
-        nav:hover {
+        *{
+            user-select: none;
             cursor: default;
         }
 
-        .ticker-container {
-            width: 100%;
-            overflow: hidden;
-            background: #f1f1f1;
-            color: black;
-            padding: 10px 0;
-            position: relative;
-            text-align: center;
-            font-size: 18px;
-            font-weight: 500;
-            font-style: italic;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(45px);
         }
 
-        .ticker-wrapper {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .ticker-content {
-            display: flex;
-            width: 100%;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .ticker-item {
-            flex: 0 0 100%;
-            text-align: center;
-        }
-
-        .ticker-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: transparent;
-            color: #ccc;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 24px;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ticker-button:hover {
-            color: black;
-        }
-
-        .prev {
-            left: 25%;
-        }
-
-        .next {
-            right: 25%;
+        input:hover {
+            cursor:text;
         }
 
         .navbar {
-            background-color: #4c4c4c;
             display: flex;
+            padding: 0px 80px;
             align-items: center;
-            justify-content: space-between;
-            z-index: 1000;
-            box-shadow: 0, .5, 1 rgba(0, 0, 0, .1);
-            padding: 0 120px;
-            height: 10%;
+            gap: 227px;
+            background-color: #C63F3E;
         }
 
         .navbar a {
-            color: #fff;
+            color: #FFFFFF;
+            font-size: 18px;
+        }
+
+        .nav-ic i{
+            font-size: 25px;
+            transition: transform 0.3s;
+        }
+
+        .nav-left {
+            display: flex;
+            width: 465px;
+            height: 70px;
+            align-items: center;
+            gap: 71px;
+            flex-shrink: 0;
+        }
+
+        .nav-right {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            gap: 52px;
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            width: 232px;
+            padding: 20px 0px;
+            align-items: flex-start;
+            gap: 58px;
+            flex-shrink: 0;
+        }
+
+        .nav-ic {
+            display: flex;
+            align-items: flex-end;
+            gap: 50px;
         }
 
         .nav-search {
             display: flex;
-            justify-content: center;
-            flex: 1;
+            width: 400px;
+            height: 40px;
+            padding: 8px 17px;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+            border-radius: 20.5px;
+            border: 1px solid #FFF;
         }
-
-
-
-        .nav-head {
-            width: 30%;
-            position: relative;
-            margin-bottom: -5px;
-            padding-top: 5px;
-        }
-
-        .nav-cont {
-            width: 30%;
-            text-align: right;
-        }
-
-        .nav-cont a {
-            display: inline-flex;
-            margin-left: 40px;
-            font-size: 25px;
-        }
-
 
         .search {
-            width: 80%;
-            padding: 5px;
-            background-color: white;
-            border-radius: 20px;
-        }
-
-        .search button {
-            background-color: #fff;
-            border-radius: 100%;
-            padding: 0 5px;
-        }
-
-        .search input {
-            width: 90%;
-        }
-
-        .nav-head a {
-            font-size: 30px;
-            font-weight: 800;
-            margin-right: 10px;
-            color: #fff;
-        }
-
-        a.logo {
-            padding-right: 100px;
-        }
-
-        .nav-head button {
-            background-color: #4c4c4c;
-            margin-left: 50px;
-            padding: 10px;
-            margin-bottom: 10px;
-            text-align: right;
-            border-radius: 10px;
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .menu:hover {
-            background-color: black;
-            opacity: 0.5;
-            color: orange;
-        }
-
-       
-
-        .dropdown-menu {
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.5);
-            right: 30px;
-            left: 100px;
-            top: 100%;
-            z-index: 1000;
-            padding: 5px;
-            height: 500px;
-            padding-left: 30px;
-            width: 1050px;
-        }
-
-        .dropdown-menu a {
-            color: #fff;
-            font-size: 20px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        .dropdown-menu li {
-            margin: 30px 0;
-            width: 150px;
-        }
-
-        .submenu0 ul {
-            border-right: solid #fff 2px;
+            background-color: transparent;
+            color: #FFFFFF;
             width: 100%;
-            height: 80%;
         }
 
-        .submenu0 i {
-            font-size: 70%;
-            margin-left: 40px;
+        .nav-search a {
+            height: 20px;
         }
-
-        .dropdown-menu ul {
-            margin: 0 10px;
-        }
-
         
 
-        .submenu ul {
-            display: flex;
+        input::placeholder {
+            color: #FFFFFF;
         }
 
-        
-
-        .submenu li {
-            margin-left: 40px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
+        .test {
+            height: 10000px;
         }
 
-        a.prduct {
-            font-size: 15px;
-            font-weight: 400;
-            margin-bottom: 12px;
+        .nav-ic i:hover{
+            transform: scale(1.2);
+            color: #fbe385;
         }
 
-        a.title {
-            font-weight: 700;
-            margin-bottom: 15px;
+        .nav-menu a:hover{
+            color: #fbe385;
         }
-
-        a.title1 {
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .submenu2 ul {
-            display: flex;
-        }
-
-        
-
-        .submenu2 li {
-            margin-left: 40px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .dropdown-menu {
-            display: none;
-        }
-
-        .submenu {
-            display: none;
-        }
-
-        .submenu2 {
-            display: none;
-        }
-        .dropdown-menu.show {
-            display: flex;
-        }
-
-        .submenu.show {
-            display: flex;
-        }
-
-        .submenu2.show {
-            display: flex;
-        }
-
-        .nav-cont a:hover {
-            color: orange;
-        }
-
-        .submenu0 a:hover{
-            color: orange;
-        }
-
-        a.prduct:hover{
-            color: orange;
-        }
-
-        
     </Style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -304,176 +131,30 @@
 
     <header>
         <div class="navbar">
-            <nav class="nav-head">
-                <a href="#" class="logo"><i class="fa-brands fa-bluesky"></i></a>
-                <button class="menu"></i>
-                    SẢN PHẨM
-                    <i class="fa-solid fa-caret-down"></i>
-                </button>
-                <div class="dropdown-menu" id="dropdown-menu">
-                    <div class="submenu0">
-                        <ul>
-                            <li><a href="#" id="maleMenu">NAM <i class="fa-solid fa-caret-right"></i></a></li>
-                            <li><a href="#" id="femaleMenu">NỮ <i class="fa-solid fa-caret-right"></i></a></li>
-                            <li><a href="#" id="saleoff">SALE OFF</a></li>
-                            <li><a href="#" id="phukien">THỜI TRANG & PHỤ KIỆN</a></li>
-                        </ul>
-                    </div>
-                    <div class="submenu">
-                        <ul>
-                            <li>
-                                <a href="" class="title">NỔI BẬT</a>
-                                <a href="" class="prduct">Best Seller</a>
-                                <a href="" class="prduct">New Arrival</a>
-                                <a href="" class="prduct">Sale off</a>
-                                <a href="" class="title1">Bộ sản phẩm</a>
-                                <a href="" class="prduct">Recycled Material</a>
-                                <a href="" class="prduct">Day Slide</a>
-                                <a href="" class="prduct">Denim</a>
-                                <a href="" class="prduct">Track 6 OG</a>
-                                <a href="" class="prduct">Pattas Polka Dots</a>
-                            </li>
-                            <li>
-                                <a href="" class="title">GIÀY</a>
-                                <a href="" class="title1">Dòng sản phẩm</a>
-                                <a href="" class="prduct">Basas</a>
-                                <a href="" class="prduct">Vintas</a>
-                                <a href="" class="prduct">Urbas</a>
-                                <a href="" class="prduct">Pattas</a>
-                                <a href="" class="prduct">Creas</a>
-                                <a href="" class="prduct">Track 6</a>
-                                <a href="" class="title1">Style</a>
-                                <a href="" class="prduct">High Top</a>
-                                <a href="" class="prduct">Low Top</a>
-                                <a href="" class="prduct">Slip-on</a>
-                                <a href="" class="title1">Tất cả giày</a>
-                            </li>
-                            <li>
-                                <a href="" class="title">THỜI TRANG & PHỤ KIỆN</a>
-                                <a href="" class="title1">Nửa trên</a>
-                                <a href="" class="prduct">Basic Tee</a>
-                                <a href="" class="prduct">Graphic tee</a>
-                                <a href="" class="prduct">Sweatshirt</a>
-                                <a href="" class="prduct">Hoodie</a>
-                                <a href="" class="title1">Phụ kiện</a>
-                                <a href="" class="prduct">Nón</a>
-                                <a href="" class="prduct">Dây giày</a>
-                                <a href="" class="prduct">Vớ</a>
-                                <a href="" class="prduct">Túi Tote</a>
-                                <a href="" class="title1">Xem tất cả</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="submenu2">
-                        <ul>
-                            <li>
-                                <a href="" class="title">NỔI BẬT</a>
-                                <a href="" class="prduct">Best Seller</a>
-                                <a href="" class="prduct">New Arrival</a>
-                                <a href="" class="prduct">Sale off</a>
-                                <a href="" class="title1">Bộ sản phẩm</a>
-                                <a href="" class="prduct">Day Slide</a>
-                                <a href="" class="prduct">Pattas Polka Dots</a>
-                                <a href="" class="prduct">Basas Evergreen</a>
-                                <a href="" class="prduct">Urbas Ruler</a>
-                                <a href="" class="prduct">Track 6 Class E</a>
-                            </li>
-                            <li>
-                                <a href="" class="title">GIÀY</a>
-                                <a href="" class="title1">Dòng sản phẩm</a>
-                                <a href="" class="prduct">Basas</a>
-                                <a href="" class="prduct">Vintas</a>
-                                <a href="" class="prduct">Urbas</a>
-                                <a href="" class="prduct">Pattas</a>
-                                <a href="" class="prduct">Creas</a>
-                                <a href="" class="prduct">Track 6</a>
-                                <a href="" class="title1">Style</a>
-                                <a href="" class="prduct">High Top</a>
-                                <a href="" class="prduct">Low Top</a>
-                                <a href="" class="prduct">Slip-on</a>
-                                <a href="" class="title1">Tất cả giày</a>
-                            </li>
-                            <li>
-                                <a href="" class="title">THỜI TRANG & PHỤ KIỆN</a>
-                                <a href="" class="title1">Nửa trên</a>
-                                <a href="" class="prduct">Basic Tee</a>
-                                <a href="" class="prduct">Graphic tee</a>
-                                <a href="" class="prduct">Sweatshirt</a>
-                                <a href="" class="prduct">Hoodie</a>
-                                <a href="" class="title1">Phụ kiện</a>
-                                <a href="" class="prduct">Nón</a>
-                                <a href="" class="prduct">Dây giày</a>
-                                <a href="" class="prduct">Vớ</a>
-                                <a href="" class="prduct">Túi Tote</a>
-                                <a href="" class="title1">Xem tất cả</a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="nav-left">
+                <div class="nav-logo">
+                    <a href="">
+                        <img src="/logo/logo.svg" alt="">
+                    </a>
                 </div>
-            </nav>
-
-            <div class="nav-search">
-                <form action="" class="search">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input type="text" name="" id="" value placeholder="Nhập tên sản phẩm cần tìm">
-                </form>
+                <div class="nav-menu">
+                    <a href="" class="nav-product">Product</a>
+                    <a href="" class="nav-about">About us</a>
+                </div>
             </div>
-
-            <nav class="nav-cont">
-                <a href="" title="Tra cứu đơn hàng"><i class="fa-solid fa-box"></i></a>
-                <a href="#" title="Danh sách yêu thích"><i class="fa-solid fa-heart"></i></a>
-                <a href="#" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href="#" title="Đăng nhập"><i class="fa-regular fa-circle-user"></i></a>
-            </nav>
+            <div class="nav-right">
+                <div class="nav-search">
+                    <a href=""><img src="/logo/search-ic.svg" alt=""></a>
+                    <input type="text" class="search" placeholder="Search product">
+                </div>
+                <div class="nav-ic">
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+                    <a href=""><i class="fa-solid fa-user"></i></a>
+                </div>
+            </div>
         </div>
     </header>
-
-
-    <script>
-        const menu = document.querySelector(".menu");
-        const menuDropdown = document.querySelector(".dropdown-menu");
-        const maleMenu = document.getElementById("maleMenu");
-        const femaleMenu = document.getElementById("femaleMenu");
-        const subMenu = document.querySelector(".submenu");
-        const subMenu2 = document.querySelector(".submenu2");
-        const saleoff = document.getElementById("saleoff");
-        const phukien = document.getElementById("phukien");
-
-        menu.addEventListener("mouseenter", () => {
-            menuDropdown.classList.add("show");
-        });
-        maleMenu.addEventListener("mouseenter", () => {
-            subMenu.classList.add("show");
-            subMenu2.classList.remove("show");
-        });
-        femaleMenu.addEventListener("mouseenter", () => {
-            subMenu2.classList.add("show");
-            subMenu.classList.remove("show");
-        });
-
-        document.addEventListener("click", function () {
-            menuDropdown.classList.remove("show");
-        });
-        document.addEventListener("click", function () {
-            subMenu.classList.remove("show");
-        });
-        document.addEventListener("click", function () {
-            subMenu2.classList.remove("show");
-        });
-
-        saleoff.addEventListener("mouseenter", ()=> {
-            subMenu.classList.remove("show");
-            subMenu2.classList.remove("show");
-        });
-
-        phukien.addEventListener("mouseenter", ()=> {
-            subMenu.classList.remove("show");
-            subMenu2.classList.remove("show");
-        });
-
-
-    </script>
-    </div>
 </body>
 
 </html>
